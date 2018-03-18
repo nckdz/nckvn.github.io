@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="post">
+<span itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+<span typeof="v:Breadcrumb"><a href="{{ site.url }}" property="v:title" rel="v:url" title="Home">
+<i class="fa fa-home"></i>
+</a></span>
+<i class="fa fa-angle-right"></i>
+{% if page.categories %}<span typeof="v:Breadcrumb"><a href="/cats" property="v:title" rel="v:url" title="Categories">{% for cat in page.categories %} {{ cat }}{% endfor %}</a></span>
+<i class="fa fa-angle-right"></i>{% endif %}
+<span><a href="" title="{{ page.title }}">{{ page.title }}</a></span>
+</div></span>
+{{ content }}
+</div>

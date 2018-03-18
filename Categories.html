@@ -1,0 +1,16 @@
+---
+layout: default
+title: Categories
+permalink: /cats/
+description: "Posts Listed By Catgories"
+author_profile: false
+comments: false
+---
+<div class="post">
+{% for tag in site.categories %}
+<h2>- {{ tag[0] }}</h2>
+{% for post in tag[1] %}
++ <a class="tag-post-title" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title | escape }}">{{ post.title | escape }}</a><br />
+{% endfor %}
+{% endfor %}
+</div>

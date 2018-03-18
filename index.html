@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="nck-posts">
+<h2 class="nck">New Post</h2>
+{% for post in site.posts %}<div class="nck-post">
+<div class="nck-post-thumbnail">
+<a href="{{ post.url | prepend: site.baseurl }}">
+{% if post.image %}<img  alt="{{ post.title | escape }}" title="{{ post.title | escape }}" src="{{ post.image }}">{% else %}
+<img  alt="{{ post.title | escape }}" title="{{ post.title | escape }}" src="{{ site.baseurl }}/images/thumbnail.jpg">{% endif %}
+</a>
+</div>
+<h2 class="nck-post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+<div class="nck-post-time"><i class="fa fa-clock-o"></i> {{ post.date | date: "%b %-d, %Y" }}</div>
+<div class="nck-post-snippet">{{ post.excerpt }}</div> <a class="nck-read-more" href="{{ post.url | prepend: site.baseurl }}">Đọc Tiếp <i class='fa fa-angle-right'></i></a>
+</div>
+{% endfor %}
+</div>

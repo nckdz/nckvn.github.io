@@ -1,0 +1,26 @@
+# Site Settings
+title: Im Coder
+email: nck9z2015@gmail.com
+description: >
+  Blog Of A Coder ! 
+baseurlbaseurl: ""
+url: "https://imcoder.ml"
+
+# Layout Settings
+header_type: default  # values [ drawer, default ]
+post_type: highlight    # values [ highlight, default ]
+pagination_type: default  # values [ ops, default ]
+
+# Build Settings
+markdown: kramdown
+
+# HTML Minify
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]

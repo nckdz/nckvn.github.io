@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /data.json
+author_profile: false
+comments: false
+---
+[{% for post in site.posts %}
+    {
+      "name" : "{{ post.title }}",
+      "link" : "{{ post.url }}",
+      "image" : "{% if post.image %}{{ post.image }}{% else %}{{ site.url }}{{ site.baseurl }}/images/thumbnail.jpg{% endif %}",
+      "date" : {
+         "day" : "{{ post.date | date: "%d" }}",
+         "month" : "{{ post.date | date: "%B" }}",
+         "year" : "{{ post.date | date: "%Y" }}"
+      }
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+]
